@@ -49,6 +49,16 @@ case "$DEVICE" in
             "$@"
         ;;
 
+    "jflte")
+        sed -i \
+            -e 's block/platform/msm_sdcc.1/by-name/modem mmcblk0p2 ' \
+            -e 's block/platform/msm_sdcc.1/by-name/persist mmcblk0p17 ' \
+            -e 's block/platform/msm_sdcc.1/by-name/system mmcblk0p16 ' \
+            -e 's block/platform/msm_sdcc.1/by-name/boot mmcblk0p20 ' \
+            -e 's block/platform/msm_sdcc.1/by-name/userdata mmcblk0p29 ' \
+            "$@"
+    ;;
+
     "i9305" | "encore" | "n7000" | "n7100" | "i9300" | "iyokan")
 	sed -i \
 	    -e 's /block/ / ' \
